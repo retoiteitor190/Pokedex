@@ -12,6 +12,11 @@
     pointer-events: none;
 }
 
+.Git-Enlace {
+    background-color: #898578;
+    color: #24077A;
+}
+
 .button {
     margin: 5px;
     cursor: pointer;

@@ -21,7 +21,7 @@ function App() {
   }
 
   const next=(min=1,max=600)=>{
-    if(pokemon.id =max){
+    if(pokemon.id >=max){
       return pokemon.id = min;
     } else{
       return pokemon.id +1;
@@ -42,11 +42,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className='Git-Enlace'>
+        <h3>Enlace de GitHub</h3>
+        <a href='https://github.com/retoiteitor190/Pokedex.git'>Git Alejandro Ruiz Moreno</a>
+        </div>
+      
         <div className='flex-container'>
           <img src={pokemon?.sprites?.back_default ?? "https://pngimg.com/uploads/pokeball/pokeball_PNG26.png"} className="poke-image" alt="logo" />
           <img src={pokemon?.sprites?.front_default ?? "https://i.pinimg.com/originals/95/fc/30/95fc304b40461a9922bd1d3aff885496.png"} className="poke-image" alt="logo" />
         </div>
-        <a href='https://github.com/retoiteitor190/Pokedex.git'>Git</a>
+        <h3>Nombre del pokemon</h3>
         <p> {pokemon.name ?? "No pokemon Selected"}</p>
         <p>{pokemon.id}</p>
         <div className='flex-container'>
