@@ -29,7 +29,7 @@ function App() {
     //return pokemon.id +1;
   }
   const back=(min=1, max=600)=>{
-    if(pokemon.id=min){
+    if(pokemon.id<=min){
     return pokemon.id=max;
   }else {
     return pokemon.id - 1 ;
@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='Git-Enlace'>
-        <h3>Enlace de GitHub</h3>
+        <h3>Enlace de GitHub </h3>
         <a href='https://github.com/retoiteitor190/Pokedex.git'>Git Alejandro Ruiz Moreno</a>
         </div>
       
