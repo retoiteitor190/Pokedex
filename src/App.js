@@ -16,16 +16,25 @@ function App() {
     .then((data)=>setPokemon(data));
   };
 
-  const getRandomInt=(min= 1,max=500)=>{
+  const getRandomInt=(min= 1,max=600)=>{
     return Math.floor(Math.random()* (max-min)+min);
   }
 
-  const next=()=>{
-    return pokemon.id +1;
+  const next=(min=1,max=600)=>{
+    if(pokemon.id =max){
+      return pokemon.id = min;
+    } else{
+      return pokemon.id +1;
+    } 
+    //return pokemon.id +1;
   }
-  const back=()=>{
-    return pokemon.id - 1;
-  }
+  const back=(min=1, max=600)=>{
+    if(pokemon.id=min){
+    return pokemon.id=max;
+  }else {
+    return pokemon.id - 1 ;
+  } ;
+  };
 
   useEffect(()=>{
     console.log({pokemon});
