@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import Popup from "./components/popup.js"
 
 
 function App() {
   const [pokemon,setPokemon]= useState({});
 
   const[actual,setActual]= useState(false);
+
+  const [buttonPopup,setButtonPopup]= useState(false);
 
   const toggle=()=>{
     setActual(!actual)
@@ -30,7 +33,7 @@ function App() {
     //return pokemon.id +1;
   }
   const back=(min=1, max=600)=>{
-    if(pokemon.id<=min){
+    if(pokemon.id   <=min){
     return pokemon.id=max;
   }else {
     return pokemon.id - 1 ;
@@ -60,7 +63,29 @@ function App() {
           <button className='button' onClick={()=>fetchPokemon(back())}>Back</button>
           <button className='button' onClick={()=>fetchPokemon(getRandomInt())}>Random</button>
           <button className='button' onClick={()=>fetchPokemon(next())}>Next</button>
+          <button className='button' onClick={()=>setButtonPopup(true)}>Abilities</button>
         </div>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+
+          <h3>{pokemon.name}</h3>
+
+          <ul className='text'>
+
+             {pokemon?.abilities?.map((ability)=>(
+
+               <li key={ability.ability.id}>
+
+                 {ability.ability.name}
+
+               </li>
+
+             ))
+
+             }
+
+          </ul>
+
+      </Popup>
       </header>
     </div>
   );
