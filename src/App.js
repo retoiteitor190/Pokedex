@@ -56,22 +56,10 @@ function App() {
         <p> {pokemon.name ?? "No pokemon Selected"}</p>
         <h3>Id Pokemon</h3>
         <p>{pokemon.id}</p>
-        <div>
-          <ul className='text'>
-          {
-            pokemon?.abilities?.map((ability) => (
-              <li key={ability.ability.id}> {ability.ability.name}  </li>
-            ))
-          }
-          </ul>
-          </div>
         <div className='flex-container'>
           <button className='button' onClick={()=>fetchPokemon(back())}>Back</button>
           <button className='button' onClick={()=>fetchPokemon(getRandomInt())}>Random</button>
           <button className='button' onClick={()=>fetchPokemon(next())}>Next</button>
-        </div>
-        <div>
-          
         </div>
       </header>
     </div>
