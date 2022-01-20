@@ -7,13 +7,11 @@ import Popup from "./components/popup.js"
 function App() {
   const [pokemon,setPokemon]= useState({});
 
-  const[actual,setActual]= useState(false);
+
 
   const [buttonPopup,setButtonPopup]= useState(false);
 
-  const toggle=()=>{
-    setActual(!actual)
-  }
+
   const fetchPokemon=(id)=>{
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then((response)=>response.json())
